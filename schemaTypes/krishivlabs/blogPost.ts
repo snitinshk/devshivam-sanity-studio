@@ -1,22 +1,22 @@
-import { defineField, defineType } from 'sanity'
+import {defineField, defineType} from 'sanity'
 
 const blogPost = defineType({
   name: 'blogPost',
   title: 'Blog Post',
   type: 'document',
   fields: [
-    defineField({ name: 'title', title: 'Title', type: 'string' }),
+    defineField({name: 'title', title: 'Title', type: 'string'}),
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      options: { source: 'title', maxLength: 96 },
+      options: {source: 'title', maxLength: 96},
     }),
     defineField({
       name: 'content',
       title: 'Content',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [{type: 'block'}],
     }),
     defineField({
       name: 'publishedAt',
@@ -26,4 +26,4 @@ const blogPost = defineType({
   ],
 })
 
-export default blogPost;
+export default blogPost

@@ -5,8 +5,12 @@
   "installCommand": "pnpm install",
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/krishivlabs-blogs/:path*",
+      "destination": "/krishivlabs-blogs/index.html"
+    },
+    {
+      "source": "/indiaxguide/:path*",
+      "destination": "/indiaxguide/index.html"
     }
   ]
 }

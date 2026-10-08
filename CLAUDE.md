@@ -4,7 +4,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This is a [Sanity Studio](https://www.sanity.io/) v3 project for the content management backend of `shivamshukla.dev`. It connects to Sanity project `o58x9hzu` (dataset: `production`).
+This is a [Sanity Studio](https://www.sanity.io/) project with multiple workspaces:
+
+| Workspace | `basePath` | Sanity project | Dataset |
+|-----------|------------|----------------|---------|
+| Krishiv Labs blogs | `/krishivlabs-blogs` | `o58x9hzu` | `production` |
+| indiaXguide | `/indiaxguide` | `pd1mib79` | `production` |
 
 ## Commands
 
@@ -20,7 +25,8 @@ No test runner is configured.
 ## Architecture
 
 - [sanity.config.ts](sanity.config.ts) — Studio entry point: registers plugins (`structureTool`, `visionTool`) and wires in schema types.
-- [schemaTypes/](schemaTypes/) — All Sanity document/object schemas. New types must be exported from [schemaTypes/index.ts](schemaTypes/index.ts) and added to the `schemaTypes` array to appear in the Studio.
+- [schemaTypes/krishivlabs/](schemaTypes/krishivlabs/) — Schemas for the Krishiv Labs workspace; export from `index.ts` as `krishivlabsSchemaTypes`.
+- [schemaTypes/indiaXguide/](schemaTypes/indiaXguide/) — Schemas for indiaXguide; export from `index.ts` as `indiaXguideSchemaTypes`.
 - `static/` — Static assets served by the Studio.
 
 ## Code Style
